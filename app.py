@@ -19,7 +19,7 @@ st.sidebar.markdown('Please fill in the following details to get the prediction.
 # Define the input fields
 st.sidebar.title('Customer Churn Prediction')
 st.sidebar.header('Input Features')
-account_length = st.sidebar.slider('Account Length', 1, 243, 10)
+account_length = st.number_input('Account Length',min_value=1)
 voice_plan = st.sidebar.selectbox('Voice Plan', ['Yes', 'No'])
 intl_plan = st.sidebar.selectbox('International Plan', ['Yes', 'No'])
 intl_calls = st.sidebar.slider('International Calls', 0, 20, 10)
