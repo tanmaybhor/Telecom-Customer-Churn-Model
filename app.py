@@ -11,27 +11,27 @@ load_model = pickle.load(open('model.sav', 'rb'))
 df = pd.read_csv('Churn.csv')
 
 # Define the UI
-st.sidebar.title('Telecom Customer Churn Prediction')
-st.sidebar.markdown('Please fill in the following details to get the prediction.')
+st.title('Telecom Customer Churn Prediction')
+st.markdown('Please fill in the following details to get the prediction.')
 
 # Get the user inputs
 
 # Define the input fields
-st.sidebar.title('Customer Churn Prediction')
-st.sidebar.header('Input Features')
+st.title('Customer Churn Prediction')
+st.header('Input Features')
 account_length = st.number_input('Account Length',min_value=1)
-voice_plan = st.sidebar.selectbox('Voice Plan', ['Yes', 'No'])
-intl_plan = st.sidebar.selectbox('International Plan', ['Yes', 'No'])
-intl_calls = st.sidebar.slider('International Calls', 0, 20, 10)
-intl_charge = st.sidebar.slider('International Charge', 0.0, 5.40, 2.0, step=0.1)
-day_calls = st.sidebar.slider('Day Calls', 0, 165, 100)
-day_charge = st.sidebar.slider('Day Charge', 0.0, 59.0, 32.0, step=0.1)
-eve_calls = st.sidebar.slider('Evening Calls', 0, 170, 100)
-eve_charge = st.sidebar.slider('Evening Charge', 0.0, 30.0, 25.0, step=0.1)
-night_calls = st.sidebar.slider('Night Calls', 0, 175, 100)
-night_charge = st.sidebar.slider('Night Charge', 0.0, 17.0, 10.0, step=0.1)
-customer_calls = st.sidebar.slider('Customer Service Calls', 0, 9, 5)
-area_code = st.sidebar.selectbox('Area Code', ['408', '415', '510'])
+voice_plan = st.selectbox('Voice Plan', ['Yes', 'No'])
+intl_plan = st.selectbox('International Plan', ['Yes', 'No'])
+intl_calls = st.number_input('International Calls', min_value=1)
+intl_charge = st.number_input('International Charge', min_value=1)
+day_calls = st.number_input('Day Calls', min_value=1)
+day_charge = st.number_input('Day Charge', min_value=1)
+eve_calls = st.number_input('Evening Calls',min_value=1)
+eve_charge = st.number_input('Evening Charge',min_value=1)
+night_calls = st.number_input('Night Calls', min_value=1)
+night_charge = st.number_input('Night Charge',min_value=1)
+customer_calls = st.number_input('Customer Service Calls',min_value=1)
+area_code = st.selectbox('Area Code', ['408', '415', '510'])
 
 # Convert categorical variables to numerical
 voice_plan = 1 if voice_plan == 'Yes' else 0
